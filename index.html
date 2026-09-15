@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.corebiq.css">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>CMB | Clinic Management Dashboard</title>
@@ -8,8 +10,6 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-
-<link rel="stylesheet" href="style.corebiq">
 </head>
 
 <body>
@@ -29,17 +29,17 @@
                     <span id="dash-error-text">Database connection failed.</span>
                 </div>
 
-                <h2 class="cbx-inline-bf4f38e4e9">
-                    <span class="cbx-inline-5c5d8f442d">Welcome,</span>
-                    <span class="cbx-inline-dc2e428fc7">Stra Care</span>
+                <h2 class="cb-inline-0150">
+                    <span class="cb-inline-0151">Welcome,</span>
+                    <span class="cb-inline-0152">Stra Care</span>
                 </h2>
 
-                <h3 class="cbx-inline-313f91a251">
-                    <span class="material-symbols-rounded cbx-inline-4ff818ffe1">storefront</span>
+                <h3 class="cb-inline-0153">
+                    <span class="material-symbols-rounded cb-inline-0154">storefront</span>
                     <span id="dash-branch-text">Loading...</span>
                 </h3>
 
-                <p class="cbx-inline-39e36cc524">
+                <p class="cb-inline-0155">
                     Clinic Administration Overview.
                 </p>
 
@@ -75,28 +75,28 @@
                         <div class="mini-stats-grid">
                             <div class="mini-stat">
                                 <div class="mini-stat-label">
-                                    <div class="dot cbx-inline-15dd9491d8"></div> Pending
+                                    <div class="dot cb-inline-0156"></div> Pending
                                 </div>
                                 <div class="mini-stat-val" id="dashPending">0</div>
                             </div>
 
                             <div class="mini-stat">
                                 <div class="mini-stat-label">
-                                    <div class="dot cbx-inline-1f8d1eb054"></div> Completed
+                                    <div class="dot cb-inline-0157"></div> Completed
                                 </div>
                                 <div class="mini-stat-val" id="dashCompleted">0</div>
                             </div>
 
                             <div class="mini-stat">
                                 <div class="mini-stat-label">
-                                    <div class="dot cbx-inline-bfc90c8fec"></div> Moved
+                                    <div class="dot cb-inline-0158"></div> Moved
                                 </div>
                                 <div class="mini-stat-val" id="dashRescheduled">0</div>
                             </div>
 
                             <div class="mini-stat">
                                 <div class="mini-stat-label">
-                                    <div class="dot cbx-inline-047b234a08"></div> Cancelled
+                                    <div class="dot cb-inline-0159"></div> Cancelled
                                 </div>
                                 <div class="mini-stat-val" id="dashCancelled">0</div>
                             </div>
@@ -106,7 +106,7 @@
                     <div class="dash-card">
                         <div class="card-title">
                             Calendar
-                            <span class="material-symbols-rounded cbx-inline-8f70defb20"
+                            <span class="material-symbols-rounded cb-inline-0160"
                                  
                                   onclick="window.setCalToToday()"
                                   title="Go to Today">today</span>
@@ -124,16 +124,16 @@
                 </div>
 
                 <div class="dash-table-wrapper">
-                    <div class="cbx-inline-2e240f6aaf">
-                        <h4 class="cbx-inline-cab938e192">
+                    <div class="cb-inline-0161">
+                        <h4 class="cb-inline-0162">
                             Schedule for:
-                            <span class="cbx-inline-dc2e428fc7" id="dashListTitle">Today</span>
+                            <span id="dashListTitle" class="cb-inline-0152">Today</span>
                         </h4>
 
-                        <button class="cbx-inline-6c1be207c3"
-                                onclick="window.switchView('view-appointments',null)">
+                        <button
+                                onclick="window.switchView('view-appointments',null)" class="cb-inline-0163">
                             View Full Module
-                            <span class="material-symbols-rounded cbx-inline-1444c6eaca">arrow_forward</span>
+                            <span class="material-symbols-rounded cb-inline-0164">arrow_forward</span>
                         </button>
                     </div>
 
@@ -150,7 +150,7 @@
                             </thead>
                             <tbody id="dashAptTableBody">
                                 <tr>
-                                    <td class="cbx-inline-7222553c23" colspan="5">
+                                    <td colspan="5" class="cb-inline-0165">
                                         Loading live schedule...
                                     </td>
                                 </tr>
@@ -191,17 +191,17 @@
     <!-- Calculator popup -->
     <div id="calc-popup-container">
         <div id="calc-popup-header">
-            <span class="cbx-inline-7838257433">
-                <span class="material-symbols-rounded cbx-inline-74138aad54">calculate</span>
+            <span class="cb-inline-0166">
+                <span class="material-symbols-rounded cb-inline-0167">calculate</span>
                 Calculator
             </span>
-            <span class="material-symbols-rounded cbx-inline-1b21b10203"
+            <span class="material-symbols-rounded cb-inline-0168"
                  
                   onclick="window.toggleCalculator()">close</span>
         </div>
 
-        <div class="cbx-inline-805e67594c" id="calc-popup-content"
-            >
+        <div id="calc-popup-content"
+             class="cb-inline-0169">
         </div>
     </div>
 
@@ -462,8 +462,8 @@ window.toggleCalculator = function() {
 
     if (contentDiv && contentDiv.innerHTML.trim() === '') {
         contentDiv.innerHTML =
-            '<iframe class="cbx-inline-9edaf05cdb" src="calc.html?v=' + Date.now() +
-            '"></iframe>';
+            '<iframe src="calc.html?v=' + Date.now() +
+            '" style="width:100%;height:100%;border:none;background:transparent"></iframe>';
     }
 };
 
@@ -565,7 +565,7 @@ window.switchView = async function(targetId, navElement) {
 
     if (!filename) {
         targetDiv.innerHTML =
-            '<div>Module mapping not found.</div>';
+            '<div style="padding:40px;text-align:center;color:var(--danger)">Module mapping not found.</div>';
         targetDiv.classList.add('active');
         return;
     }
@@ -574,7 +574,7 @@ window.switchView = async function(targetId, navElement) {
     if (targetDiv.dataset.loaded !== 'true') {
 
         targetDiv.innerHTML =
-            '<div class="cbx-inline-5424d70230">Loading module...</div>';
+            '<div style="text-align:center;padding:40px;color:var(--primary)">Loading module...</div>';
 
         targetDiv.classList.add('active');
 
@@ -626,16 +626,30 @@ window.switchView = async function(targetId, navElement) {
             console.error(`Error loading ${filename}:`, error);
 
             targetDiv.innerHTML = `
-                <div class="cbx-inline-e84be8ad38">
-                    <span class="material-symbols-rounded cbx-inline-0c31f0fa03">error</span>
+                <div style="
+                    text-align:center;
+                    padding:40px;
+                    color:var(--danger);
+                    background:#FEF2F2;
+                    border-radius:12px;
+                    border:1px solid #FEE2E2;
+                ">
+                    <span class="material-symbols-rounded" style="font-size:32px;margin-bottom:8px">error</span>
                     <br>
                     <b>Module Not Found.</b>
                     <br>
                     Ensure the file <b>${filename}</b> exists in the /development/ folder.
                     <br><br>
-                    <button class="cbx-inline-dd4139f9ad"
+                    <button
                         onclick="window.switchView('${targetId}',null)"
-                       >
+                        style="
+                            border:1px solid var(--border);
+                            background:#fff;
+                            border-radius:8px;
+                            padding:8px 14px;
+                            cursor:pointer;
+                            font-weight:600;
+                        ">
                         Retry
                     </button>
                 </div>
@@ -872,8 +886,8 @@ window.renderLiveTable = function() {
     if (dayApts.length === 0) {
         tableBody.innerHTML = `
             <tr>
-                <td class="cbx-inline-88ca21d71e" colspan="5"
-                   >
+                <td colspan="5"
+                    style="text-align:center;padding:40px;color:var(--text-muted);font-size:13px;display:block;width:100%">
                     No appointments scheduled for this date.
                 </td>
             </tr>
@@ -904,35 +918,35 @@ window.renderLiveTable = function() {
         rowsHtml += `
             <tr>
                 <td>
-                    <strong class="cbx-inline-254bd94084">
+                    <strong style="color:var(--text-main);font-size:14px">
                         ${data.time || '--:--'}
                     </strong>
                 </td>
 
                 <td>
-                    <strong class="cbx-inline-87ecb5e708">
+                    <strong style="font-size:14px;display:block;margin-bottom:2px">
                         ${data.name || 'Unknown'}
                     </strong>
-                    <span class="cbx-inline-87c6966ef3">
+                    <span style="font-size:12px;color:var(--text-muted);font-weight:600">
                         +91 ${data.mobile || ''}
                     </span>
                 </td>
 
                 <td>
-                    <strong class="cbx-inline-f38316681a">
+                    <strong style="font-size:13px;color:var(--primary);display:block;margin-bottom:2px">
                         ${data.branch || ''}
                     </strong>
-                    <span class="cbx-inline-87c6966ef3">
+                    <span style="font-size:12px;color:var(--text-muted);font-weight:600">
                         Dr. ${data.therapist || 'N/A'}
                     </span>
                 </td>
 
                 <td>
-                    <span class="cbx-inline-87c6966ef3">
+                    <span style="font-size:12px;color:var(--text-muted);font-weight:600">
                         Fee: ₹${Number(data.fee || 0).toFixed(2)}
                     </span>
                     <br>
-                    <strong class="${balance.className} cbx-inline-5e0faad207">
+                    <strong class="${balance.className}" style="font-size:13px">
                         ${balance.text}
                     </strong>
                 </td>
